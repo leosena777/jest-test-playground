@@ -1,9 +1,4 @@
-function filterByTerm(inputArr, searchTerm) {
-    return inputArr.filter(function(arrayElement) {
-      return arrayElement.url.match(searchTerm);
-    });
-}
-
+const filterByTerm = require ( "../src/filterByTerm" ) ;
   
 describe("Filter function", () => {
   test("it should filter by a search term (link)", () => {
@@ -16,5 +11,7 @@ describe("Filter function", () => {
     const output = [{ id: 3, url: "https://www.link3.dev" }];
 
     expect(filterByTerm(input, "link")).toEqual(output);
+    expect(filterByTerm(input, "LINK")).toEqual(output);
+
   });
 });
